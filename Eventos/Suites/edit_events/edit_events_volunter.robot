@@ -6,7 +6,7 @@ Test Teardown    Fechar navegador
 
 Fucionalidade: "Editar Eventos"
     Critério de aceitação 1:
-        Como Voluntário eu preciso Editar os seguintes dados de eventos (aprovados, pendentes e reprovados) no sistema:
+        Como Voluntário eu preciso Editar os seguintes dados de eventos (aprovados e pendentes) no sistema:
         Nome do Evento (tipo texto)
         Data do Evento (tipo data)
         Horário do Evento
@@ -29,7 +29,7 @@ Fucionalidade: "Editar Eventos"
 TC001 - Administrador editar demais campos do evento com dados válidos.
     Dado que eu esteja logado no sistema como Voluntário	
     E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento
+    Quando clicar no botão Editar Evento de um Evento (aprovado ou pendente)
     E alterar algum dos campos
     Mas não consegue alterar o campo de Status e Voluntário Responsável
     E clicar no botão Salvar
@@ -38,7 +38,7 @@ TC001 - Administrador editar demais campos do evento com dados válidos.
 TC002 - Administrador editar demais campos do evento com dados inválidos.
     Dado que eu esteja logado no sistema como Voluntário	
     E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento
+    Quando clicar no botão Editar Evento de um Evento (aprovado ou pendente)
     E alterar algum dos campos utilizando dados inválidos
     Mas não consegue alterar o campo de Status e Voluntário Responsável
     E clicar no botão Salvar
