@@ -4,7 +4,7 @@ Resource     ../../../../Eventos\Resources\main.robot
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
 
-Funcionalidade: "Cadastrar Eventos"
+Funcionalidade: "Visualizar Eventos"
 Critério de aceitação 1:
     Como Voluntário eu preciso Vizualizar Todos os eventos que eu cadastrados no sistema (aprovados).
 
