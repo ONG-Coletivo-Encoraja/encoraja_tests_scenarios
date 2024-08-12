@@ -4,56 +4,76 @@ Resource     ../../../../Eventos/Resources/main.robot
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
 
-# Funcionalidade: "Editar Eventos"
-# Critério de aceitação 1:
-    Como Administrador eu preciso Editar os seguintes dados de eventos (pendentes e aprovados) no sistema:
-
-    Nome do Evento (tipo texto)
-    Data do Evento (tipo data)
-    Horário do Evento
-    Descrição do Evento
-    Tipo do Evento
-    Status do Evento (Pendente, Ativo)
-    Modalidade do Evento
-    Total de vagas
-    Vagas sociais
-    Vagas gerais
-    Público Alvo
-    Materiais Necessários
-    Áreas de interesse
-    Preço
-    Carga Horária
-    Voluntário responsável 
+Fucionalidade: "Editar Eventos"
+    Critério de aceitação 1:
+        Como Administrador eu preciso Editar os seguintes dados de eventos (aprovados, pendentes e reprovados) no sistema:
+        Nome do Evento (tipo texto)
+        Data do Evento (tipo data)
+        Horário do Evento
+        Descrição do Evento
+        Tipo do Evento
+        Status do Evento (Pendente, Ativo)
+        Modalidade do Evento
+        Total de vagas
+        Vagas sociais
+        Vagas gerais
+        Público Alvo
+        Materiais Necessários
+        Áreas de interesse
+        Preço
+        Carga Horária
+        Voluntário responsável 
 
 *** Test Cases ***
 
-TC001 - Administrador edita Status do Evento
-	Dado que eu esteja logado no sistema como Administrador
-	E acesse o menu lateral Eventos > Cadastrar Evento
-    E preencher os campos do formulário “Cadastrar evento”
-    E selecionar qualquer usuário do tipo voluntário (cadastrado no sistema e que esteja ativo) como “Voluntário responsável”
-    Quando clicar no botão “Criar evento” 
-    Então o sistema exibe uma mensagem de confirmação
-    E após confirmada o evento écadastrado no sistema
-    E o usuário redirecionado para a tela de Todos os Eventos
-    E o novo evento será exibido na listagem de Todos os eventos com o status de pendente
+TC001 - Administrador edita Status do Evento de Pendente para Aprovado.
+    Dado que eu esteja logado no sistema como Administrador	
+    E acesse o menu lateral Eventos
+    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
+    E alterar o Status de Pendente para Aprovado
+    E clicar no botão Salvar
+    Então o sistema deverá exibir o evento com o status Aprovado na listagem de Todos os eventos para todos os usuários
 
-TC002 - Administrador cadastra evento ativo no site.
-	Dado que eu esteja logado no sistema como Administrador
-	E acesse o menu lateral Eventos > Cadastrar Evento
-    E preencher os campos do formulário “Cadastrar evento”
-    E selecionar qualquer usuário do tipo voluntário (cadastrado no sistema e que esteja ativo) como “Voluntário responsável”
-    E seleciona o Status “Ativo”
-    Quando clicar no botão “Criar evento” 
-    Então o sistema exibe uma mensagem de confirmação
-    E após confirmada o evento é cadastrado no sistema
-    E o usuário redirecionado para a tela de Todos os Eventos
-    E o novo evento será exibido na listagem de Todos os eventos com o status de pendente
+TC002 - Administrador edita Status do Evento de Pendente para Reprovado.
+    Dado que eu esteja logado no sistema como Administrador	
+    E acesse o menu lateral Eventos
+    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
+    E alterar o Status de Pendente para Reprovado
+    E clicar no botão Salvar
+    Então o sistema deverá exibir o evento com o status Reprovado na listagem de Todos os eventos para o usuário Voluntário e Administrador
 
-TC002 - Administrador cadastra evento com dados inválidos no site.
-	Dado que eu esteja logado no sistema como Administrador
-	E acesse o menu lateral Eventos > Cadastrar Evento
-    E preencher os campos do formulário “Cadastrar evento” com dados inválidos
-    Quando clicar no botão “Criar evento” 
-    Então o sistema exibe mensagens de erro abaixo dos campos que contém dados inválidos
-    E não permite que o evento seja salvo
+TC003 - Administrador edita Status do Evento de Aprovado para Reprovado.
+    Dado que eu esteja logado no sistema como Administrador	
+    E acesse o menu lateral Eventos
+    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
+    E alterar o Status de Aprovado para Reprovado
+    E clicar no botão Salvar
+    Então o sistema deverá exibir o evento com o status Reprovado na listagem de Todos os eventos para o usuário Voluntário e Administrador
+
+TC004 - Administrador edita Status do Evento de Reprovado para Aprovado.
+    Dado que eu esteja logado no sistema como Administrador	
+    E acesse o menu lateral Eventos
+    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
+    E alterar o Status de Reprovado para Aprovado
+    E clicar no botão Salvar
+    Então o sistema deverá exibir o evento com o status Aprovado na listagem de Todos os eventos para todos os usuários
+
+TC005 - Administrador editar demais campos (Nome do Evento (tipo texto) | Descrição do Evento | Tipo do Evento | Modalidade do Evento |
+...    Público Alvo | Materiais Necessários | Áreas de interesse | Data do Evento (tipo data) | Horário do Evento | Preço | Carga Horária |
+...    Voluntário responsável) do evento com dados válidos.
+    Dado que eu esteja logado no sistema como Administrador	
+    E acesse o menu lateral Eventos
+    Quando clicar no botão Editar Evento de um Evento
+    E alterar os dados de algum dos demais campos
+    E clicar no botão Salvar
+    Então o sistema deverá exibir as alterações do evento na tela de eventos para os usuários de acordo com o tipo de acesso
+
+TC006 - Administrador editar demais campos (Nome do Evento (tipo texto) | Descrição do Evento | Tipo do Evento | Modalidade do Evento |
+...    Público Alvo | Materiais Necessários | Áreas de interesse | Data do Evento (tipo data) | Horário do Evento | Preço | Carga Horária |
+...    Voluntário responsável) do evento com dados inválidos.
+    Dado que eu esteja logado no sistema como Administrador	
+    E acesse o menu lateral Eventos
+    Quando clicar no botão Editar Evento de um Evento
+    E alterar o texto de algum dos demais campos utilizando dados inválidos
+    E clicar no botão Salvar
+    Então o sistema deverá mensagem de erro abaixo dos campos que foram preenchidos com dados incorretos
