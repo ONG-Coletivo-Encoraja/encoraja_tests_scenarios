@@ -14,6 +14,7 @@ Resource  Data/Dados_login.robot
 
 ### Page ###
 Resource  Pages\create_events.robot
-
-
+Resource  Pages\delete_events.robot
+Resource  Pages\read_events.robot
+Resource  Pages\update_events.robot
 
