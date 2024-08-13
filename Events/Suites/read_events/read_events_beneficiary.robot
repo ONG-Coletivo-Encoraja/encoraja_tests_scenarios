@@ -6,7 +6,7 @@ Test Teardown    Fechar navegador
 
 Funcionalidade: "Visualizar Eventos"
 Critério de aceitação 1:
-    Como Voluntário eu preciso Vizualizar Todos os eventos que eu cadastrados no sistema (aprovados).
+    Como Beneficiário eu preciso Vizualizar Todos os eventos que eu cadastrados no sistema (aprovados).
 
 *** Test Cases ***
 
