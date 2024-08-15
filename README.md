@@ -10,6 +10,7 @@ A Organização não Governamental (ONG) **Coletivo Encoraja** apoia mulheres em
 - ```pip install robotframework```: para instalação do robot
 - ```pip install --upgrade robotframework-seleniumlibrary```: para baixar a biblioteca do sellenium
 - Installar as seguintes extensões no Vscode:
+   <br>
   ![imagem (1)](https://github.com/user-attachments/assets/6eb91439-6186-431a-9f1e-334f3bcd2887)
 
 
