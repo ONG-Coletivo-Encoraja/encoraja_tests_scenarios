@@ -16,4 +16,4 @@ TC001 - Administrador Vizualiza todas as Inscrições.
     Então o sistema exibe a lista de todas as Inscrições cadastrados no sistema (pendentes, aprovados e reprovados)
     E permite o Administrador aprovar ou reprovar inscrições pagas
     E permite que o usuário alterne entre as páginas
-E permite que o usuário filtre as imformações
+    E permite que o usuário filtre as imformações
