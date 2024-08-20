@@ -4,76 +4,41 @@ Resource     ../../../../Eventos/Resources/main.robot
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
 
-Fucionalidade: "Editar Eventos"
+Fucionalidade: "Editar usuário"
     Critério de aceitação 1:
-        Como Administrador eu preciso Editar os seguintes dados de eventos (aprovados, pendentes e reprovados) no sistema:
-        Nome do Evento (tipo texto)
-        Data do Evento (tipo data)
-        Horário do Evento
-        Descrição do Evento
-        Tipo do Evento
-        Status do Evento (Pendente, Ativo)
-        Modalidade do Evento
-        Total de vagas
-        Vagas sociais
-        Vagas gerais
-        Público Alvo
-        Materiais Necessários
-        Áreas de interesse
-        Preço
-        Carga Horária
-        Voluntário responsável 
+        Como Administrador eu preciso Editar os meus dados de usuário e aprovar perfis de usuários Voluntários.
 
 *** Test Cases ***
 
-TC001 - Administrador edita Status do Evento de Pendente para Aprovado.
+TC001 - Administrador edita Status da solicitação de Voluntáriado de Pendente para Aprovado.
     Dado que eu esteja logado no sistema como Administrador	
-    E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
+    E tenham solicitações de Voluntáriado
+    Quando eu acessar uma solicitação de Voluntáriado
     E alterar o Status de Pendente para Aprovado
     E clicar no botão Salvar
-    Então o sistema deverá exibir o evento com o status Aprovado na listagem de Todos os eventos para todos os usuários
+    Então o sistema deverá alterar o permissionamento do usuário
+    E notificá-lo com dados do novo login
 
-TC002 - Administrador edita Status do Evento de Pendente para Reprovado.
+TC002 - Administrador edita Status da solicitação de Voluntáriado de Pendente para Reprovado.
     Dado que eu esteja logado no sistema como Administrador	
-    E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
+    E tenham solicitações de Voluntáriado
+    Quando eu acessar uma solicitação de Voluntáriado
     E alterar o Status de Pendente para Reprovado
     E clicar no botão Salvar
-    Então o sistema deverá exibir o evento com o status Reprovado na listagem de Todos os eventos para o usuário Voluntário e Administrador
-
-TC003 - Administrador edita Status do Evento de Aprovado para Reprovado.
+    Então o sistema deverá notificar o usuário sobre a reprovação
+    
+TC003 - Administrador edita Status da solicitação de Voluntáriado de Aprovado para Reprovado.
     Dado que eu esteja logado no sistema como Administrador	
-    E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
+    E tenham solicitações de Voluntáriado
+    Quando eu acessar uma solicitação de Voluntáriado
     E alterar o Status de Aprovado para Reprovado
     E clicar no botão Salvar
-    Então o sistema deverá exibir o evento com o status Reprovado na listagem de Todos os eventos para o usuário Voluntário e Administrador
+    Então o sistema deverá notificar o usuário sobre a reprovação
 
-TC004 - Administrador edita Status do Evento de Reprovado para Aprovado.
+TC004 - Administrador edita seus dados de usuário.
     Dado que eu esteja logado no sistema como Administrador	
-    E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
-    E alterar o Status de Reprovado para Aprovado
+    Quando eu acessar minhas configurações
+    E alterar meus dados pessoais
     E clicar no botão Salvar
-    Então o sistema deverá exibir o evento com o status Aprovado na listagem de Todos os eventos para todos os usuários
+    Então o sistema deverá atualizar meus dados
 
-TC005 - Administrador editar demais campos (Nome do Evento (tipo texto) | Descrição do Evento | Tipo do Evento | Modalidade do Evento |
-...    Público Alvo | Materiais Necessários | Áreas de interesse | Data do Evento (tipo data) | Horário do Evento | Preço | Carga Horária |
-...    Voluntário responsável) do evento com dados válidos.
-    Dado que eu esteja logado no sistema como Administrador	
-    E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento
-    E alterar os dados de algum dos demais campos
-    E clicar no botão Salvar
-    Então o sistema deverá exibir as alterações do evento na tela de eventos para os usuários de acordo com o tipo de acesso
-
-TC006 - Administrador editar demais campos (Nome do Evento (tipo texto) | Descrição do Evento | Tipo do Evento | Modalidade do Evento |
-...    Público Alvo | Materiais Necessários | Áreas de interesse | Data do Evento (tipo data) | Horário do Evento | Preço | Carga Horária |
-...    Voluntário responsável) do evento com dados inválidos.
-    Dado que eu esteja logado no sistema como Administrador	
-    E acesse o menu lateral Eventos
-    Quando clicar no botão Editar Evento de um Evento
-    E alterar o texto de algum dos demais campos utilizando dados inválidos
-    E clicar no botão Salvar
-    Então o sistema deverá mensagem de erro abaixo dos campos que foram preenchidos com dados incorretos

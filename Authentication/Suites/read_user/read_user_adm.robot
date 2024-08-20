@@ -4,17 +4,20 @@ Resource     ../../../../Eventos\Resources\main.robot
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
 
-Funcionalidade: "Visualizar Eventos"
-Critério de aceitação 1:
-    Como Administrador eu preciso Vizualiza Todos os eventos cadastrados no sistema (pendentes, aprovados e reprovados).
+Fucionalidade: "Visualizar usuário"
+    Critério de aceitação 1:
+        Como Administrador eu preciso Visualizar os meus dados de usuário.
+
 
 *** Test Cases ***
 
-TC001 - Administrador Vizualiza todos os eventos.
-	Dado que eu esteja logado no sistema como Administrador
-	Quando acessar o menu lateral Eventos > Todos os eventos
-    Então o sistema exibe a lista de todos os eventos cadastrados no sistema (pendentes, aprovados e reprovados)
-    E permite o Administrador Editar e Apagar evento
-    E permite a aplicação de filtros
-    E permite que o usuário efetue busca de evento por meio de qualquer um dos dados cadastrados (excessão do status)
-    E permite que o usuário alterne entre as páginas
+TC001 - Administrador Visualiza seus dados de usuário.
+    Dado que eu esteja logado no sistema como Administrador	
+    Quando eu acessar minhas configurações
+    Então o sistema deverá exibir meus dados de cadastro e login
+
+TC001 - Administrador Visualiza os dados de usuário quando houverem candidaturas para Voluntáriado.
+    Dado que eu esteja logado no sistema como Administrador
+    E existam solicitações de Voluntáriado
+    Quando eu a tela principal do site
+    Então o sistema deverá exibir os dados cadastrais de solicitação para Voluntáriado
