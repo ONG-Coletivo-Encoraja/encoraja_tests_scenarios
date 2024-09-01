@@ -7,6 +7,7 @@ A Organização não Governamental (ONG) **Coletivo Encoraja** apoia mulheres em
 
 ## Rodando o projeto
 - ```Installar Python```
+- ```Installar ChromeDriver```: ChromeDriver Latest Releases Versions Downloads - Chrome for Testing availability (getwebdriver.com)
 - ```pip install robotframework```: para instalação do robot
 - ```pip install --upgrade robotframework-seleniumlibrary```: para baixar a biblioteca do sellenium
 - ```Installar as seguintes extensões no Vscode```:
