@@ -7,12 +7,14 @@ A Organização não Governamental (ONG) **Coletivo Encoraja** apoia mulheres em
 
 ## Rodando o projeto
 - ```Installar Python```
-- ```Installar ChromeDriver```: ChromeDriver Latest Releases Versions Downloads - Chrome for Testing availability (getwebdriver.com)
-- ```pip install robotframework```: para instalação do robot
-- ```pip install --upgrade robotframework-seleniumlibrary```: para baixar a biblioteca do sellenium
+- ```Installar ChromeDriver```: ChromeDriver Latest Releases Versions Downloads - Chrome for Testing availability (getwebdriver.com) deve ser instalado na mesma pasta do python
+
 - ```Installar as seguintes extensões no Vscode```:
    <br>
   ![imagem (1)](https://github.com/user-attachments/assets/6eb91439-6186-431a-9f1e-334f3bcd2887)
+
+- ```pip install robotframework```: para instalação do robot
+- ```pip install --upgrade robotframework-seleniumlibrary```: para baixar a biblioteca do sellenium
 
 
 ## Equipe
