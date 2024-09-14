@@ -7,7 +7,8 @@ A Organização não Governamental (ONG) **Coletivo Encoraja** apoia mulheres em
 
 ## Rodando o projeto
 - ```Installar Python```
-- ```Installar ChromeDriver```: ChromeDriver Latest Releases Versions Downloads - Chrome for Testing availability (getwebdriver.com) deve ser instalado na mesma pasta do python
+- ```Installar ChromeDriver```: ChromeDriver Latest Releases Versions Downloads - Chrome for Testing availability (getwebdriver.com) 
+É um ambiente controlado de testes e deve ser instalado na mesma pasta do python.
 
 - ```Installar as seguintes extensões no Vscode```:
    <br>
