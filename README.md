@@ -13,8 +13,12 @@ A Organização não Governamental (ONG) **Coletivo Encoraja** apoia mulheres em
    <br>
   ![imagem (1)](https://github.com/user-attachments/assets/6eb91439-6186-431a-9f1e-334f3bcd2887)
 
-- ```pip install robotframework```: para instalação do robot
-- ```pip install --upgrade robotframework-seleniumlibrary```: para baixar a biblioteca do sellenium
+- ```git clone```: clonar o repositório de testes
+- ```pip install robotframework```: para instalação do robot - rodar no bash
+- ```pip install --upgrade robotframework-seleniumlibrary```: para baixar a biblioteca do sellenium - rodar no bash
+
+- ```robot -d Results_NOMEDAPASTA CAMINHODOARQUIVO\*```: para rodar um arquivo da suites de testes
+- ```robot -d Results_NOMEDAPASTASUITES CAMINHODAPASTASUITES\*```: para rodar uma pasta da suites de testes
 
 
 ## Equipe
