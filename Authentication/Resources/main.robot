@@ -1,20 +1,15 @@
 *** Settings ***
 
-Library  SeleniumLibrary
-Library  OperatingSystem
-Library  ExcelLibrary
-
+Library     SeleniumLibrary
+Library    OperatingSystem
 
 ### Data ###
-Resource  Data/Geral.robot
-Resource  Data/Dados_login.robot
+Resource    Data/Geral.robot
+Resource    Data/Dados_login.robot
 
-###  Shared ###
-# Resource  Shares/stup_teardown.robot
+### Shared ###
+Resource    Shares/stup_teardown.robot
 
-### Page ###
-Resource  Pages\create_events.robot
-Resource  Pages\delete_events.robot
-Resource  Pages\read_events.robot
-Resource  Pages\update_events.robot
 
+### Pages ###
+Resource    Pages/Login.robot
