@@ -1,52 +1,53 @@
-* Settings *
-Resource  ../main.robot
+*** Settings ***
+Resource    ../main.robot
 Library    String
 
-* Variables *
+*** Variables ***
 &{login}
 #Elementos da tela
-...   Logo_encoraja=/html/body/div[1]/header/div/img
-...   Text_login=/html/body/div[1]/header/div/a[1]/button
-...   Text_usuario=//*[@id=":Rd7rmfj6:-form-item"]
-...   Text_senha=//*[@id=":Rl7rmfj6:-form-item"]
-...   Button_entrar=/html/body/div[1]/div/div[2]/form/button
-...   Tela_logado=/html/body/div[2]/header/div/button[2]
+...    Logo_encoraja=//img[contains(@alt,'Logo')]
+...    Button_login=(//button[contains(@type,'button')])[2]
+...    Text_user=//input[contains(@aria-describedby,':R6fndt7:-form-item-description')]
+...    Text_password=//input[contains(@type,'password')]
+...    Button_enter=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2 mt-4'][contains(.,'Entrar')]
+...    Logged_in_screen=//img[@src='/img/girlshome.png']
 
-* Keywords *
-Dado que o navegador esteja aberto no site da Encoraja 
-    Open Browser  ${geral.url}   browser=chrome  
-    #Open Browser  ${geral.url}   browser=headlesschrome  
+*** Keywords ***
+
+Dado que o navergador esteja aberto no site da ONG Coletivo Encoraja
+    Open Browser    ${geral.url}    browser=chrome
     Maximize Browser Window
 
-E o formulário de login seja acessado
-    sleep   10
-    Wait Until Element Is Visible    ${login.Button_entrar}
-    Set Focus To Element             ${login.Button_entrar}
-    Press Keys                       ${None}                 ENTER 
-    Wait Until Element Is Visible    ${login.Text_usuario}   15          
-    Input Text                       ${login.Text_usuario}   ${dados_login.User_administrator} 
-    Input Password                   ${login.Text_senha}     ${dados_login.Password_administrator}
-    Wait Until Element Is Visible    ${login.Button_entrar}      
-    Press Keys                       ${None}                 ENTER
-    Set Focus To Element             ${login.Button_entrar}   
-    Press Keys                       ${None}                 ENTER 
-      
-E seja realizado o Login com usuario Administrador
-    Wait Until Element Is Visible    ${login.Text_usuario}   15          
-    Input Text                       ${login.Text_usuario}   ${dados_login.User_volunter} 
-    Input Password                   ${login.Text_senha}     ${dados_login.Password_volunter}
-    Wait Until Element Is Visible    ${login.Button_entrar}      
-    Press Keys                       ${None}                 ENTER
-    Set Focus To Element             ${login.Button_entrar} 
-    Wait Until Element Is Visible    ${login.Text_id_base}   15  
-    Press Keys                       ${None}                 ENTER 
+E clicou no botão Login   
+     Sleep    3
+     Wait Until Element Is Visible    ${login.Button_login}    15
+     Set Focus To Element    ${login.Button_login}
+     Click Element   ${login.Button_login}
+     Sleep    3
 
-E seja realizado o  Login com usuario Beneficiário
-    Wait Until Element Is Visible    ${login.Text_usuario}   15          
-    Input Text                       ${login.Text_usuario}   ${dados_login.User_beneficiary} 
-    Input Password                   ${login.Text_senha}     ${dados_login.Password_beneficiary}
-    Wait Until Element Is Visible    ${login.Button_entrar}      
-    Press Keys                       ${None}                 ENTER
-    Set Focus To Element             ${login.Button_entrar} 
-    Wait Until Element Is Visible    ${login.Text_id_base}   30 
-    Press Keys                       ${None}                 ENTER
+
+E fazer Login com Usuário Benefiário
+    Sleep    10
+    Wait Until Element Is Visible    ${login.Text_user}    15
+    Input Text    ${login.Text_user}    ${dados_login.User_beneficiary}
+    Input Password    ${login.Text_password}    ${dados_login.Password_beneficiary}
+    Wait Until Element Is Visible    ${login.Button_enter}
+    Set Focus To Element    ${login.Button_enter}
+    Click Element   ${login.Button_enter}
+    
+E fazer Login com Usuário Voluntário
+    Sleep    3
+    Wait Until Element Is Visible    ${login.Text_user}    15
+    Input Text    ${login.Text_user}    ${dados_login.User_volunter}
+    Input Password    ${login.Text_password}    ${dados_login.Password_volunter}
+    Wait Until Element Is Visible    ${login.Button_enter}
+    Set Focus To Element    ${login.Button_enter}
+    Click Element   ${login.Button_enter}
+
+E fazer Login com Usuário Administrador
+    Wait Until Element Is Visible    ${login.Text_user}    15
+    Input Text    ${login.Text_user}    ${dados_login.User_administrator}
+    Input Password    ${login.Text_password}    ${dados_login.Password_administrator}
+    Wait Until Element Is Visible    ${login.Button_enter}
+    Set Focus To Element    ${login.Button_enter}
+    Click Element   ${login.Button_enter}
