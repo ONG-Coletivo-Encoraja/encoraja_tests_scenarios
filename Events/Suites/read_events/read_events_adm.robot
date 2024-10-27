@@ -6,7 +6,8 @@ Suite Teardown    Fechar navegador
 
 # Funcionalidade: "Visualizar Eventos"
 # Critério de aceitação 1:
-#     Como Administrador eu preciso Vizualiza Todos os eventos cadastrados no sistema (pendentes, aprovados e reprovados).
+#     Como Administrador eu preciso Vizualiza Todos os eventos
+#      cadastrados no sistema (pendentes, aprovados e reprovados).
 
 *** Test Cases ***
 

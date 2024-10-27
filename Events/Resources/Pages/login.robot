@@ -25,7 +25,6 @@ E clicou no botão Login
      Click Element   ${login.Button_login}
      Sleep    3
 
-
 E fazer Login com Usuário Benefiário
     Sleep    10
     Wait Until Element Is Visible    ${login.Text_user}    15
