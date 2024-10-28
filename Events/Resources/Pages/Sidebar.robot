@@ -14,7 +14,7 @@ Library    String
 ...    Title_page_all_events=//h1[@class='font-bold leading-none tracking-tight text-[#702054] text-[30px]'][contains(.,'Eventos cadastrados')]
 ...    Title_page_create_events=//h3[@class='font-bold tracking-tight text-[#702054] text-[24px]'][contains(.,'Cadastro de evento')]
 ...    Title_page_all_inscriptions=//h2[@class='font-bold leading-none tracking-tight text-[#702054] text-[24px]'][contains(.,'Todas as Inscrições')]
-...    
+  
 *** Keywords ***
 Quando acessar o menu lateral Eventos > Todos os eventos
     Sleep    3
