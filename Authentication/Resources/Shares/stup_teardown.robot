@@ -3,6 +3,8 @@
 Resource    ../main.robot
 
 *** Keywords ***
+Acessar o Site Web ONG Coletivo Encoraja
+    Dado que o navergador esteja aberto no site da ONG Coletivo Encoraja
 
 Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
     Dado que o navergador esteja aberto no site da ONG Coletivo Encoraja

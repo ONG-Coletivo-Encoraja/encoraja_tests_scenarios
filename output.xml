@@ -1,351 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-10-27T22:29:56.542049" rpa="false" schemaversion="5">
-<suite id="s1" name="Read Events Adm" source="c:\tests\encoraja_tests_scenarios\Events\Suites\read_events\read_events_adm.robot">
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-10-28T09:39:40.254763" rpa="false" schemaversion="5">
+<suite id="s1" name="Create Events Adm" source="c:\tests\encoraja_tests_scenarios\Events\Suites\create_events\create_events_adm.robot">
 <kw name="Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador" owner="stup_teardown" type="SETUP">
 <kw name="Dado que o navergador esteja aberto no site da ONG Coletivo Encoraja" owner="Login">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:29:57.132164" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<msg time="2024-10-28T09:39:40.987864" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
 <arg>${geral.url}</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-27T22:29:57.128828" elapsed="2.614786"/>
+<status status="PASS" start="2024-10-28T09:39:40.978980" elapsed="2.001660"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-27T22:29:59.747873" elapsed="0.088178"/>
+<status status="PASS" start="2024-10-28T09:39:42.982051" elapsed="0.047023"/>
 </kw>
-<status status="PASS" start="2024-10-27T22:29:57.126275" elapsed="2.712474"/>
+<status status="PASS" start="2024-10-28T09:39:40.974143" elapsed="2.055738"/>
 </kw>
 <kw name="E clicou no botão Login" owner="Login">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:02.854736" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-10-28T09:39:46.034208" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:29:59.850052" elapsed="3.005757"/>
+<status status="PASS" start="2024-10-28T09:39:43.032005" elapsed="3.003285"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${login.Button_login}</arg>
 <arg>15</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:02.858301" elapsed="0.034308"/>
+<status status="PASS" start="2024-10-28T09:39:46.036391" elapsed="0.133315"/>
 </kw>
 <kw name="Set Focus To Element" owner="SeleniumLibrary">
 <arg>${login.Button_login}</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:02.893139" elapsed="0.015623"/>
+<status status="PASS" start="2024-10-28T09:39:46.176613" elapsed="0.023354"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:02.910541" level="INFO">Clicking element '(//button[contains(@type,'button')])[2]'.</msg>
+<msg time="2024-10-28T09:39:46.204437" level="INFO">Clicking element '(//button[contains(@type,'button')])[2]'.</msg>
 <arg>${login.Button_login}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:02.909260" elapsed="0.495595"/>
+<status status="PASS" start="2024-10-28T09:39:46.201204" elapsed="1.352546"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:06.406963" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-10-28T09:39:50.555108" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:30:03.405652" elapsed="3.002956"/>
+<status status="PASS" start="2024-10-28T09:39:47.554342" elapsed="3.001836"/>
 </kw>
-<status status="PASS" start="2024-10-27T22:29:59.843485" elapsed="6.566469"/>
+<status status="PASS" start="2024-10-28T09:39:43.030820" elapsed="7.526182"/>
 </kw>
 <kw name="E fazer Login com Usuário Administrador" owner="Login">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${login.Text_user}</arg>
 <arg>15</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:06.414109" elapsed="0.046765"/>
+<status status="PASS" start="2024-10-28T09:39:50.559916" elapsed="0.040581"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:06.467127" level="INFO">Typing text 'administrador@gmail.com' into text field '//input[contains(@aria-describedby,':R6fndt7:-form-item-description')]'.</msg>
+<msg time="2024-10-28T09:39:50.603268" level="INFO">Typing text 'administrador@gmail.com' into text field '//input[contains(@aria-describedby,':R6fndt7:-form-item-description')]'.</msg>
 <arg>${login.Text_user}</arg>
 <arg>${dados_login.User_administrator}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:06.462462" elapsed="0.183996"/>
+<status status="PASS" start="2024-10-28T09:39:50.601158" elapsed="0.159327"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:06.649812" level="INFO">Typing password into text field '//input[contains(@type,'password')]'.</msg>
-<msg time="2024-10-27T22:30:06.687295" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2024-10-28T09:39:50.763529" level="INFO">Typing password into text field '//input[contains(@type,'password')]'.</msg>
+<msg time="2024-10-28T09:39:50.805280" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${login.Text_password}</arg>
 <arg>${dados_login.Password_administrator}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:06.647213" elapsed="0.172551"/>
+<status status="PASS" start="2024-10-28T09:39:50.761280" elapsed="0.118250"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${login.Button_enter}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:06.820603" elapsed="0.027732"/>
+<status status="PASS" start="2024-10-28T09:39:50.880275" elapsed="0.027268"/>
 </kw>
 <kw name="Set Focus To Element" owner="SeleniumLibrary">
 <arg>${login.Button_enter}</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:06.850364" elapsed="0.043409"/>
+<status status="PASS" start="2024-10-28T09:39:50.908171" elapsed="0.018869"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:06.902665" level="INFO">Clicking element '//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2 mt-4'][contains(.,'Entrar')]'.</msg>
+<msg time="2024-10-28T09:39:50.929578" level="INFO">Clicking element '//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2 mt-4'][contains(.,'Entrar')]'.</msg>
 <arg>${login.Button_enter}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:06.897037" elapsed="0.109550"/>
+<status status="PASS" start="2024-10-28T09:39:50.927939" elapsed="0.046506"/>
 </kw>
-<status status="PASS" start="2024-10-27T22:30:06.412183" elapsed="0.596261"/>
+<status status="PASS" start="2024-10-28T09:39:50.558361" elapsed="0.416652"/>
 </kw>
-<status status="PASS" start="2024-10-27T22:29:57.124828" elapsed="9.885092"/>
+<status status="PASS" start="2024-10-28T09:39:40.970729" elapsed="10.004864"/>
 </kw>
-<test id="s1-t1" name="TC001 - Administrador Vizualiza todos os eventos." line="14">
+<test id="s1-t1" name="TC001 - Administrador cadastra evento pendente no site." line="29">
 <kw name="Dado que eu esteja logado no sistema como Administrador" owner="Home">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:17.031053" level="INFO">Slept 10 seconds.</msg>
+<msg time="2024-10-28T09:40:00.998945" level="INFO">Slept 10 seconds.</msg>
 <arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:30:07.026075" elapsed="10.007049"/>
+<status status="PASS" start="2024-10-28T09:39:50.981437" elapsed="10.018904"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${home.User_name_adm}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:17.035401" elapsed="0.059193"/>
+<status status="PASS" start="2024-10-28T09:40:01.001965" elapsed="2.842323"/>
 </kw>
 <kw name="Set Focus To Element" owner="SeleniumLibrary">
 <arg>${home.User_name_adm}</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:17.096505" elapsed="0.044367"/>
+<status status="PASS" start="2024-10-28T09:40:03.845685" elapsed="0.023930"/>
 </kw>
-<status status="PASS" start="2024-10-27T22:30:07.021404" elapsed="10.120922"/>
+<status status="PASS" start="2024-10-28T09:39:50.979808" elapsed="12.890727"/>
 </kw>
-<kw name="Quando acessar o menu lateral Eventos &gt; Todos os eventos" owner="Sidebar">
+<kw name="E acesse o menu lateral Eventos &gt; Cadastrar Evento" owner="Sidebar">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:20.152793" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-10-28T09:40:06.879613" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:30:17.148769" elapsed="3.007481"/>
+<status status="PASS" start="2024-10-28T09:40:03.875792" elapsed="3.008565"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${sidebar.Button_events}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:20.158462" elapsed="0.064903"/>
+<status status="PASS" start="2024-10-28T09:40:06.885830" elapsed="0.032136"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:20.232461" level="INFO">Clicking button '//button[@class='flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 '][contains(.,'Eventos')]'.</msg>
+<msg time="2024-10-28T09:40:06.923514" level="INFO">Clicking button '//button[@class='flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 '][contains(.,'Eventos')]'.</msg>
 <arg>${sidebar.Button_events}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:20.225695" elapsed="0.177728"/>
+<status status="PASS" start="2024-10-28T09:40:06.919586" elapsed="0.074880"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:23.407982" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-10-28T09:40:09.998121" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:30:20.405573" elapsed="3.003850"/>
+<status status="PASS" start="2024-10-28T09:40:06.995897" elapsed="3.005565"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${sidebar.Button_all_events}</arg>
-<arg>20</arg>
+<arg>${sidebar.Button_create_events}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:23.411131" elapsed="0.068713"/>
+<status status="PASS" start="2024-10-28T09:40:10.003969" elapsed="0.037716"/>
 </kw>
 <kw name="Set Focus To Element" owner="SeleniumLibrary">
-<arg>${sidebar.Button_all_events}</arg>
+<arg>${sidebar.Button_create_events}</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:23.481883" elapsed="0.044379"/>
+<status status="PASS" start="2024-10-28T09:40:10.043222" elapsed="0.029383"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:23.533481" level="INFO">Clicking element '(//a[@href='/all-events'])[1]'.</msg>
-<arg>${sidebar.Button_all_events}</arg>
+<msg time="2024-10-28T09:40:10.078275" level="INFO">Clicking element '//a[@href='/register-event']'.</msg>
+<arg>${sidebar.Button_create_events}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:23.528574" elapsed="0.173287"/>
+<status status="PASS" start="2024-10-28T09:40:10.074325" elapsed="0.071338"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:28.709213" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-10-28T09:40:15.153121" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:30:23.705252" elapsed="5.004651"/>
+<status status="PASS" start="2024-10-28T09:40:10.147835" elapsed="5.112913"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${sidebar.Title_page_all_events}</arg>
+<arg>${sidebar.Title_page_create_events}</arg>
 <arg>20</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:28.710654" elapsed="0.033932"/>
+<status status="PASS" start="2024-10-28T09:40:15.263039" elapsed="1.706268"/>
 </kw>
-<status status="PASS" start="2024-10-27T22:30:17.145917" elapsed="11.599653"/>
+<status status="PASS" start="2024-10-28T09:40:03.872774" elapsed="13.097931"/>
 </kw>
-<kw name="Então o sistema exibe a lista de todos os eventos cadastrados no sistema (pendentes, aprovados e reprovados)" owner="Events">
+<kw name="E preencher os campos do formulário “Cadastrar evento”" owner="Events">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:38.762269" level="INFO">Slept 10 seconds.</msg>
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:30:28.755487" elapsed="10.008407"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${event.First_event}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-10-27T22:30:38.765687" elapsed="0.345172"/>
-</kw>
-<kw name="Set Focus To Element" owner="SeleniumLibrary">
-<arg>${event.First_event}</arg>
-<doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:39.113378" elapsed="0.047829"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${event.Status_active}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:39.163499" elapsed="0.052349"/>
-</kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:39.467955" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-1.png"&gt;&lt;img src="selenium-element-screenshot-1.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>${event.First_event}</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2024-10-27T22:30:39.217689" elapsed="0.254025"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${event.Second_event}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-10-27T22:30:39.474357" elapsed="0.303976"/>
-</kw>
-<kw name="Set Focus To Element" owner="SeleniumLibrary">
-<arg>${event.Second_event}</arg>
-<doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:39.780745" elapsed="0.048854"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${event.Status_pending}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:39.832469" elapsed="0.071069"/>
-</kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:40.065540" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-2.png"&gt;&lt;img src="selenium-element-screenshot-2.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>${event.Second_event}</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2024-10-27T22:30:39.906550" elapsed="0.161003"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${event.Third_event}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-10-27T22:30:40.070043" elapsed="0.365683"/>
-</kw>
-<kw name="Set Focus To Element" owner="SeleniumLibrary">
-<arg>${event.Third_event}</arg>
-<doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:40.438476" elapsed="0.060308"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${event.Status_finished}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:40.501219" elapsed="0.067235"/>
-</kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:40.756033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-3.png"&gt;&lt;img src="selenium-element-screenshot-3.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>${event.Third_event}</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2024-10-27T22:30:40.571021" elapsed="0.187193"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${event.Fourth_event}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-10-27T22:30:40.761168" elapsed="0.326934"/>
-</kw>
-<kw name="Set Focus To Element" owner="SeleniumLibrary">
-<arg>${event.Fourth_event}</arg>
-<doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:41.091028" elapsed="0.041279"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${event.Status_inactive}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:41.134325" elapsed="0.048077"/>
-</kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:41.338749" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-4.png"&gt;&lt;img src="selenium-element-screenshot-4.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>${event.Fourth_event}</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2024-10-27T22:30:41.184807" elapsed="0.156065"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${event.Fifth_event}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-10-27T22:30:41.342926" elapsed="0.364835"/>
-</kw>
-<kw name="Set Focus To Element" owner="SeleniumLibrary">
-<arg>${event.Fifth_event}</arg>
-<doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:41.710099" elapsed="0.050962"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${event.Status_finished}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:41.763682" elapsed="0.050111"/>
-</kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:41.997163" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-5.png"&gt;&lt;img src="selenium-element-screenshot-5.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>${event.Fifth_event}</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2024-10-27T22:30:41.816189" elapsed="0.183768"/>
-</kw>
-<status status="PASS" start="2024-10-27T22:30:28.749729" elapsed="13.252528"/>
-</kw>
-<kw name="E permite a visualização em tela cheia após selecionado" owner="Events">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-27T22:30:45.023384" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-10-28T09:40:19.983937" level="INFO">Slept 3 seconds.</msg>
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-27T22:30:42.019953" elapsed="3.006449"/>
+<status status="PASS" start="2024-10-28T09:40:16.981695" elapsed="3.003385"/>
 </kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${event.First_event}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-10-27T22:30:45.029909" elapsed="0.341648"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T09:40:19.989890" level="INFO">Typing text 'Evento Teste' into text field '//input[contains(@placeholder,'Nome do evento')]'.</msg>
+<arg>${event.Input_name_event}</arg>
+<arg>Evento Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T09:40:19.986375" elapsed="0.143902"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:45.382716" level="INFO">Clicking element '(//div[contains(.,'Próximos eventosWorkshop de Desenvolvimento Pessoal10:00:00presentialworkshopactive30/09/2024Responsável: Maria Oliveira')])[7]'.</msg>
-<arg>${event.First_event}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-27T22:30:45.374433" elapsed="0.165525"/>
+<status status="PASS" start="2024-10-28T09:40:16.979629" elapsed="3.151620"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${event.Event_screen}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-27T22:30:45.543316" elapsed="0.167176"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<msg time="2024-10-27T22:30:45.919687" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-10-27T22:30:45.921632" level="FAIL">Element with locator '/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/button' not found.</msg>
-<arg>${event.Button_back}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="FAIL" start="2024-10-27T22:30:45.714352" elapsed="39.722962">Element with locator '/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/button' not found.</status>
-</kw>
-<kw name="Set Focus To Element" owner="SeleniumLibrary">
-<arg>${event.Button_back}</arg>
-<doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-10-27T22:31:25.437921" elapsed="0.000240"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<arg>${event.Button_back}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-10-27T22:31:25.438543" elapsed="0.000189"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${event.First_event}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-10-27T22:31:25.439071" elapsed="0.000196"/>
-</kw>
-<status status="FAIL" start="2024-10-27T22:30:42.015198" elapsed="43.424488">Element with locator '/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/button' not found.</status>
-</kw>
-<status status="FAIL" start="2024-10-27T22:30:07.011700" elapsed="78.430252">Element with locator '/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/button' not found.</status>
+<status status="PASS" start="2024-10-28T09:39:50.976209" elapsed="29.157725"/>
 </test>
 <kw name="Fechar navegador" owner="stup_teardown" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-27T22:31:25.452170" elapsed="2.271218"/>
+<status status="PASS" start="2024-10-28T09:40:20.146114" elapsed="3.455850"/>
 </kw>
-<status status="PASS" start="2024-10-27T22:31:25.450802" elapsed="2.273933"/>
+<status status="PASS" start="2024-10-28T09:40:20.142917" elapsed="3.460602"/>
 </kw>
-<status status="FAIL" start="2024-10-27T22:29:56.548768" elapsed="91.176880"/>
+<status status="PASS" start="2024-10-28T09:39:40.361897" elapsed="43.242378"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Read Events Adm">Read Events Adm</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Create Events Adm">Create Events Adm</stat>
 </suite>
 </statistics>
 <errors>

@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../../Authentication/Resources/main.robot
+Resource    ../../../Events/Resources/main.robot
 Test Setup
 
 *** Test Cases ***
