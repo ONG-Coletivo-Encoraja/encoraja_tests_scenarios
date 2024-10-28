@@ -29,7 +29,7 @@ Suite Teardown    Fechar navegador
 TC001 - Administrador cadastra evento pendente no site.
     Dado que eu esteja logado no sistema como Administrador
     E acesse o menu lateral Eventos > Cadastrar Evento
-    # E preencher os campos do formulário “Cadastrar evento”
+    E preencher os campos do formulário “Cadastrar evento”
     # E selecionar qualquer usuário do tipo voluntário (cadastrado no sistema e que esteja ativo) como “Voluntário responsável”
     # Quando clicar no botão “Criar evento” 
     # Então o sistema exibe uma mensagem de confirmação

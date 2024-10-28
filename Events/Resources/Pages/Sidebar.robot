@@ -32,6 +32,10 @@ E acesse o menu lateral Eventos > Cadastrar Evento
     Sleep    3
     Wait Until Element Is Visible    ${sidebar.Button_events}
     Click Button    ${sidebar.Button_events}
+    Sleep    3
+    Wait Until Element Is Visible    ${sidebar.Button_create_events}
+    Set Focus To Element    ${sidebar.Button_create_events}
+    Click Element    ${sidebar.Button_create_events}
     Sleep   5
     Wait Until Element Is Visible    ${sidebar.Title_page_create_events}    20
     
