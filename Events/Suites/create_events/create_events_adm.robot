@@ -1,8 +1,8 @@
 *** Settings ***
 Library    BuiltIn
-Resource     ../../../../Eventos/Resources/main.robot
-Test Setup       Acessar o site do Coletivo encoraja e logar
-Test Teardown    Fechar navegador
+Resource     ../../../Events/Resources/main.robot
+Suite Setup    Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
+Suite Teardown    Fechar navegador
 
 # Critério de aceitação 1:
 #     Como Administrador eu preciso Cadastrar os seguintes dados de eventos (pendentes e aprovados) no sistema:
@@ -27,11 +27,8 @@ Test Teardown    Fechar navegador
 *** Test Cases ***
 
 TC001 - Administrador cadastra evento pendente no site.
-    Dado que o navegador está aberto no site do Coletivo Encoraja
-    E o formulário de login seja acessável
-    E seja realizado o login com o usuário administrador
-
-    # E acesse o menu lateral Eventos > Cadastrar Evento
+    Dado que eu esteja logado no sistema como Administrador
+    E acesse o menu lateral Eventos > Cadastrar Evento
     # E preencher os campos do formulário “Cadastrar evento”
     # E selecionar qualquer usuário do tipo voluntário (cadastrado no sistema e que esteja ativo) como “Voluntário responsável”
     # Quando clicar no botão “Criar evento” 

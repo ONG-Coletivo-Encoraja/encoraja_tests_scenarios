@@ -16,6 +16,13 @@ Library    String
 ...    Status_inactive=(//div[contains(.,'inactive')])[8]
 ...    Status_pending=(//div[contains(.,'pending')])[8]
 ...    Status_finished=(//div[contains(.,'finished')])[8]
+...    Input_name_event=//input[contains(@placeholder,'Nome do evento')]
+...    Input_data=//input[contains(@id,':r13:-form-item')]
+...    Input_time=
+...    Input_description=
+...    Input_modality=
+...    Input_type=
+...    Input_public=
 
 # # Lista de filtros 
 # @{FILTERS}    Todos    Ativos    Inativos    Pendentes    Finalizados
@@ -72,3 +79,8 @@ E permite a visualização em tela cheia após selecionado
 
 # E permite que o usuário efetue busca de evento por meio de qualquer um dos dados cadastrados (excessão do status)
 #     Sleep    3
+
+E preencher os campos do formulário “Cadastrar evento”
+    Sleep    3
+    Input Text    ${event.Input_name_event}    Evento Teste
+
