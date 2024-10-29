@@ -17,12 +17,22 @@ Library    String
 ...    Status_pending=(//div[contains(.,'pending')])[8]
 ...    Status_finished=(//div[contains(.,'finished')])[8]
 ...    Input_name_event=//input[contains(@placeholder,'Nome do evento')]
-...    Input_data=//input[contains(@id,':r13:-form-item')]
-...    Input_time=
-...    Input_description=
-...    Input_modality=
-...    Input_type=
-...    Input_public=
+...    Input_data=//input[@aria-describedby=':r2:-form-item-description']
+...    Input_time=//input[@name='time']
+...    Input_description=//textarea[contains(@placeholder,'Descrição do evento')]
+...    Input_modality=(//button[@type='button'][contains(.,'Selecione')])[1]
+...    Input_type=(//button[@type='button'][contains(.,'Selecione')])[2]
+...    Input_public=(//button[@type='button'][contains(.,'Selecione')])[2]
+...    Total_vacancies=(//input[contains(@name,'vacancies')])[1]
+...    Social_vacancies=(//input[contains(@name,'vacancies')])[2]
+...    Regular_vacancies=(//input[contains(@name,'vacancies')])[3]
+...    Material=//input[contains(@placeholder,'Material do evento')]
+...    Area_interest=//input[contains(@placeholder,'Área de interesse')]
+...    Price=//input[contains(@aria-describedby,':rf:-form-item-description')]
+...    Workload=//input[contains(@aria-describedby,':rg:-form-item-description')]
+...    Volunteer=//button[@type='button'][contains(.,'Selecione um voluntário')]
+...    Status=(//button[@type='button'][contains(.,'Selecione')])[4]
+...    Button_save_event=//button[contains(.,'Salvar')]
 
 # # Lista de filtros 
 # @{FILTERS}    Todos    Ativos    Inativos    Pendentes    Finalizados
@@ -77,10 +87,75 @@ E permite a visualização em tela cheia após selecionado
 #         Sleep    3
 #     END
 
-# E permite que o usuário efetue busca de evento por meio de qualquer um dos dados cadastrados (excessão do status)
-#     Sleep    3
-
 E preencher os campos do formulário “Cadastrar evento”
     Sleep    3
+    Set Focus To Element    ${event.Input_name_event}
     Input Text    ${event.Input_name_event}    Evento Teste
+    Sleep    2
 
+    Set Focus To Element    ${event.Input_data}
+    Input Text    ${event.Input_data}    04-01-2025  
+    Sleep    2
+
+    Set Focus To Element    ${event.Input_time}
+    Input Text    ${event.Input_time}    14:00  
+    Sleep    2
+
+    Set Focus To Element    ${event.Input_description}
+    Input Text    ${event.Input_description}    Descrição do evento teste.
+    Sleep    2
+
+    Set Focus To Element    ${event.Input_modality}
+    Click Element    ${event.Input_modality}
+    Select From List By Label   ${event.Input_modality}    Presencial  
+    Sleep    2
+    # Wait Until Element Is Visible    //li[contains(text(),'Presencial')]  
+    # Click Element    //li[contains(text(),'Presencial')]
+
+    Set Focus To Element    ${event.Input_type}
+    Select From List By Value    ${event.Input_type}    Palestra  
+    Sleep    2
+
+    Set Focus To Element    ${event.Input_public}
+    Input Text    ${event.Input_public}    Mulheres
+    Sleep    2
+
+    Set Focus To Element    ${event.Total_vacancies}
+    Input Text    ${event.Total_vacancies}    20
+    Sleep    2
+
+    Set Focus To Element    ${event.Social_vacancies}
+    Input Text    ${event.Social_vacancies}    10
+    Sleep    2
+
+    Set Focus To Element    ${event.Regular_vacancies}
+    Input Text    ${event.Regular_vacancies}    10
+    Sleep    2
+
+    Set Focus To Element    ${event.Material}
+    Input Text    ${event.Material}    Tesoura
+    Sleep    2
+
+    Set Focus To Element    ${event.Area_interest}
+    Input Text    ${event.Area_interest}    Emprendedorismo
+    Sleep    2
+
+    Set Focus To Element    ${event.Price}
+    Input Text    ${event.Price}    15
+    Sleep    2
+
+    Set Focus To Element    ${event.Workload=}
+    Input Text    ${event.Workload=}    2
+    Sleep    2
+
+    Set Focus To Element    ${event.Volunteer}
+    Select From List By Value    ${event.Volunteer}    valdemar  
+    Sleep    2
+
+    Set Focus To Element    ${event.Status}
+    Select From List By Value    ${event.Status}    Pendente  
+    Sleep    2
+
+    Set Focus To Element    ${event.Button_save_event}
+    Click Button    ${event.Button_save_event}
+    Sleep    2
