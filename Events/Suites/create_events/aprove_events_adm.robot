@@ -1,6 +1,7 @@
 *** Settings ***
 Library    BuiltIn
 Resource     ../../../Events/Resources/main.robot
+Resource    ../../Resources/Pages/Create_events.robot
 Suite Setup    Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
 Suite Teardown    Fechar navegador
 
@@ -29,7 +30,6 @@ Suite Teardown    Fechar navegador
 TC001 - Administrador aprova evento Pendente proposto por Voluntário no site.
     Dado que eu esteja logado no sistema como Administrador
     E acesse o menu lateral Eventos
-    E o novo evento será exibido na listagem de Todos os eventos
     Quando selecionar o evento para visualização
     E clicar no botão "Editar evento"
     E alterar o Status de Pendente para Ativo

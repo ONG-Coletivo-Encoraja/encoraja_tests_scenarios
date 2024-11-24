@@ -8,17 +8,8 @@ ${DATE_FORMAT}    %d%m%Y
 
 &{event}
 #Elementos da tela
-...    First_event=(//div[contains(.,'Próximos eventosWorkshop de Desenvolvimento Pessoal10:00:00presentialworkshopactive30/09/2024Responsável: Maria Oliveira')])[7]
-...    Second_event=(//div[contains(.,'Próximos eventosCurso de Programação em PHP14:00:00hybridcoursepending04/11/2024Responsável: Maria Oliveira')])[7]
-...    Third_event=(//div[contains(.,'Próximos eventosPalestra sobre Sustentabilidade19:00:00remotelecturefinished14/10/2024Responsável: Maria Oliveira')])[7]
-...    Fourth_event=(//div[contains(.,'Próximos eventosOficina de Criatividade09:00:00presentialworkshopinactive30/11/2024Responsável: Maria Oliveira')])[7]
-...    Fifth_event=(//div[contains(.,'Próximos eventosCurso Avançado de Marketing Digital13:00:00hybridcoursefinished19/11/2024Responsável: Maria Oliveira')])[7]
-...    Event_screen=(//div[contains(.,'Próximos eventosWorkshop de Desenvolvimento Pessoal10:00:00presentialworkshopactive30/09/2024Responsável: Maria Oliveira')])[7]
-...    Button_back=/html/body/div[3]/div[1]/div/div/div/div/div[1]/div[1]/div/button
-...    Status_active=(//div[contains(.,'active')])[8]
-...    Status_inactive=(//div[contains(.,'inactive')])[8]
-...    Status_pending=(//div[contains(.,'pending')])[8]
-...    Status_finished=(//div[contains(.,'finished')])[8]
+
+    # Formulário de cadastro de evento
 ...    Button_create_events=//button[@class='items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2 ml-2 flex justify-around w-32'][contains(.,'Criar')]
 ...    Button_create_events_volunter=//button[@class='items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2 ml-2 flex justify-around'][contains(.,'Criar')]
 ...    Title_page_all_events=//h1[@class='font-bold leading-none tracking-tight text-[#702054] text-[24px]'][contains(.,'Eventos cadastrados')]
@@ -40,9 +31,14 @@ ${DATE_FORMAT}    %d%m%Y
 ...    Select_event_volunter=(//button[@type='button'][contains(.,'Selecione')])[1]
 ...    Select_event_status=(//button[@type='button'][contains(.,'Selecione')])[1]
 ...    Button_save_event=//button[contains(.,'Salvar')]
+
 ...    Input_search=//input[contains(@placeholder,'Pesquisar...')]
 ...    Invalid_pop_up_message=(//li[@role='status'][contains(.,'Falha no cadastro!A data do evento não pode ser anterior ao dia de hoje.')])[2]
 ...    Img_home_volunter=//img[@src='/img/girlshome.png']
+...    Event_details=(//div[@class='border bg-card text-card-foreground shadow w-full rounded-xl min-h-[350px] max-h-[500px]'][contains(.,'Próximos eventosEvento Teste Robot Pendente Voluntário14:00:00RemotoPalestraPendente24/11/2024Responsável: Maria OliveiraDescrição Evento Teste Robot Voluntário')])[1]
+...    Button_edit_event=//button[contains(.,'Editar evento')]
+...    Status_event_active=//li[contains(.,'Ativo')]
+...    Status_event_pending=//button[@type='button'][contains(.,'Pendente')]
 
 *** Keywords ***
 
@@ -62,6 +58,31 @@ Quando o Voluntário clicar no menu no botão Criar Evento
     Click Element    ${event.Button_create_events_volunter}
     Sleep   5
     Wait Until Element Is Visible    ${event.Title_page_create_events}    20
+
+Quando selecionar o evento para visualização
+    Sleep    3
+    E o novo evento será exibido na listagem de Todos os eventos
+    Click Element    ${event.Event_details}
+    Wait Until Element Is Visible    ${event.Button_edit_event}    10
+
+E clicar no botão "Editar evento"
+    Sleep    3
+    Set Focus To Element    ${event.Button_edit_event}
+    Click Element    ${event.Button_edit_event}
+    Wait Until Element Is Visible    ${event.Title_page_create_events}
+
+E alterar o Status de Pendente para Ativo
+    Sleep    3
+    Scroll Element Into View    ${event.Status_event_pending}
+    Wait Until Element Is Visible    ${event.Status_event_pending}
+    Set Focus To Element    ${event.Status_event_pending}  
+    Sleep    1
+    Press Keys    ${event.Status_event_pending}    ARROW_UP    ARROW_UP    ENTER 
+
+E o evento será apresentado com o Status "Ativo"
+    E o novo evento será exibido na listagem de Todos os eventos
+    Set Focus To Element    ${event.Status_event_active}
+    Capture Page Screenshot
 
 E o Voluntário preencher os campos do formulário “Cadastrar evento” com o status de pendente
     Sleep    3

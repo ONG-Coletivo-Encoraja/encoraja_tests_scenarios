@@ -15,4 +15,4 @@ Resource    Shares/stup_teardown.robot
 Resource    Pages/Login.robot
 Resource    Pages/Home.robot
 Resource    Pages/Sidebar.robot
-Resource    Pages/Events.robot
+Resource    Pages/Create_events.robot
