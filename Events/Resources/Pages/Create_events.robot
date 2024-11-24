@@ -420,7 +420,7 @@ E preencher os campos do formulário “Cadastrar evento” com dados inválidos
     Sleep    1
     Press Keys    ${event.Select_event_status}    ENTER 
 
- E o Voluntário preencher os campos do formulário “Cadastrar evento” com dados inválidos
+E o Voluntário preencher os campos do formulário “Cadastrar evento” com dados inválidos
      Sleep    3
     Wait Until Element Is Visible    ${event.Input_event_name}
     Set Focus To Element    ${event.Input_event_name}
@@ -506,10 +506,6 @@ E clicar no botão “Salvar”
     Set Focus To Element   ${event.Button_save_event} 
     Click Element    ${event.Button_save_event}
 
-Então o usuário redirecionado para a tela de Todos os Eventos
-    Sleep    5
-    Wait Until Element Is Visible    ${event.Title_page_all_events}    10
-
 E o novo evento será exibido na listagem de Todos os eventos
     Sleep    1
     Wait Until Element Is Visible    ${event.Input_search}
@@ -520,6 +516,10 @@ E o novo evento será exibido na listagem de Todos os eventos
     Sleep    5
     Capture Page Screenshot
 
+E na tela de Eventos o novo evento será exibido na listagem de Todos os eventos
+    E acesse o menu lateral Eventos
+    E o novo evento será exibido na listagem de Todos os eventos
+
 Então o sistema exibe mensagem de erro "Falha no cadastro!A data do evento não pode ser anterior ao dia de hoje"
     Wait Until Element Is Visible    ${event.Invalid_pop_up_message}
     Set Focus To Element    ${event.Invalid_pop_up_message}
@@ -529,6 +529,8 @@ Então o usuário é redirecionado para a tela de Inicial os Eventos
     Sleep    1
     Wait Until Element Is Visible    ${event.Img_home_volunter}    10
 
-E na tela de Eventos o novo evento será exibido na listagem de Todos os eventos
-    E acesse o menu lateral Eventos
-    E o novo evento será exibido na listagem de Todos os eventos
+Então o usuário redirecionado para a tela de Todos os Eventos
+    Sleep    5
+    Wait Until Element Is Visible    ${event.Title_page_all_events}    10
+
+
