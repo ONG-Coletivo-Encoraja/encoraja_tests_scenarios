@@ -6,7 +6,7 @@ Library    String
 &{home}
 #Elementos da tela
 ...    Logged_in_screen=//img[@src='/img/girlshome.png']
-...    User_name_adm=//button[contains(.,'zeze')]
+...    User_name_adm=//label[@class='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white mx-4 flex items-center justify-between'][contains(.,'João da Silva')]
 ...    User_name_volunteer=//button[contains(.,'valdemar')]
 ...    User_name_beneficiary=//button[contains(.,'bernadete')]
 

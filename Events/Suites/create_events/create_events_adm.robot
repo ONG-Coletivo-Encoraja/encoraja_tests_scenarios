@@ -28,14 +28,12 @@ Suite Teardown    Fechar navegador
 
 TC001 - Administrador cadastra evento pendente no site.
     Dado que eu esteja logado no sistema como Administrador
-    E acesse o menu lateral Eventos > Cadastrar Evento
+    E acesse o menu lateral Eventos
+    Quando clicar no menu no botão Criar Evento
     E preencher os campos do formulário “Cadastrar evento”
-    # E selecionar qualquer usuário do tipo voluntário (cadastrado no sistema e que esteja ativo) como “Voluntário responsável”
-    # Quando clicar no botão “Criar evento” 
-    # Então o sistema exibe uma mensagem de confirmação
-    # E após confirmada o evento écadastrado no sistema
-    # E o usuário redirecionado para a tela de Todos os Eventos
-    # E o novo evento será exibido na listagem de Todos os eventos com o status de pendente
+    Quando clicar no botão “Salvar”
+    Então o usuário redirecionado para a tela de Todos os Eventos
+    E o novo evento será exibido na listagem de Todos os eventos com o status de pendente
 
 # TC002 - Administrador cadastra evento aprovado no site.
 #     Dado que eu esteja logado no sistema como Administrador
