@@ -6,7 +6,7 @@ Library    String
 &{sidebar}
 #Elementos da tela
 # ______________________________ #
-# ...    MENU - ADM    ... #   
+# ...    MENU - ADM - VOLUNTEER   ... #   
 ...    Button_events=(//button[contains(@data-state,'closed')])[3]
 
 *** Keywords ***

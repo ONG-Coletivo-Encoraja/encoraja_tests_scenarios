@@ -26,8 +26,13 @@ Test Teardown    Fechar navegador
 
 *** Test Cases ***
 
-TC001 - Administrador edita Status do Evento de Pendente para Aprovado.
-    Dado que eu esteja logado no sistema como Administrador	
+TC001 - Administrador edita Status do Evento de Ativo para Finalizado
+    Dado que eu esteja logado no sistema como Administrador
+    E acesse o menu lateral Eventos
+    
+
+# TC001 - Administrador edita Status do Evento de Pendente para Aprovado.
+#     Dado que eu esteja logado no sistema como Administrador	
 #     E acesse o menu lateral Eventos
 #     Quando clicar no botão Editar Evento de um Evento cadastrado como Pendente
 #     E alterar o Status de Pendente para Aprovado

@@ -1,20 +1,19 @@
 *** Settings ***
 
-Library  SeleniumLibrary
-Library  OperatingSystem
-Library  ExcelLibrary
+Library    SeleniumLibrary
+Library    OperatingSystem
 
 
 ### Data ###
-Resource  Data/Geral.robot
-Resource  Data/Dados_login.robot
+Resource    Data/Geral.robot
+Resource    Data/Dados_login.robot
 
 ###  Shared ###
-# Resource  Shares/stup_teardown.robot
+Resource    Shares/stup_teardown.robot
 
 ### Page ###
-Resource  Pages\create_inscription.robot
-Resource  Pages\read_inscription.robot
-Resource  Pages\delete_inscription.robot
-Resource  Pages\update_inscription.robot
+Resource    Pages/Login.robot
+Resource    Pages/Home.robot
+Resource    Pages/Inscription.robot
+Resource    Pages/Sidebar.robot
 
