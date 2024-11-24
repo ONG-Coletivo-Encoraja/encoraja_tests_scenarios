@@ -29,22 +29,17 @@ Suite Teardown    Fechar navegador
 
 TC001 - Voluntário cadastra evento pendente no site.
 	Dado que eu esteja logado no sistema como Voluntário
-	E acesse o menu lateral Eventos > Cadastrar Evento
-    E preencher os campos do formulário “Cadastrar evento”
-#     E selecionar meu usuário como “Voluntário responsável”
-#     Mas não consigo selecionar outros usuários no campo “Voluntário responsável”
-#     E selecionar o status "Pendente"
-#     Mas não consigo selecionar outros Status para o Evento
-#     Quando clicar no botão “Criar evento” 
-#     Então o sistema exibe uma mensagem de confirmação
-#     E após confirmada o evento écadastrado no sistema
-#     E o usuário redirecionado para a tela de Todos os Eventos
-#     E o novo evento será exibido na listagem de Todos os eventos com o status de pendente
+    E acesse o menu lateral Eventos
+    Quando o Voluntário clicar no menu no botão Criar Evento
+    E o Voluntário preencher os campos do formulário “Cadastrar evento” com o status de pendente
+    E clicar no botão “Salvar”
+    Então o usuário é redirecionado para a tela de Inicial os Eventos
+    E na tela de Eventos o novo evento será exibido na listagem de Todos os eventos
 
-# TC002 - Voluntário cadastra evento pendente com dados inválidos no site.
-# 	Dado que eu esteja logado no sistema como Voluntário
-# 	E acesse o menu lateral Eventos > Cadastrar Evento
-#     E preencher os campos do formulário “Cadastrar evento” com dados inválidos
-#     Quando clicar no botão “Criar evento” 
-#     Então o sistema exibe mensagens de erro abaixo dos campos que contém dados inválidos
-#     E não permite que o evento seja salvo
+TC002 - Voluntário cadastra evento pendente com dados inválidos no site.
+	Dado que eu esteja logado no sistema como Voluntário
+	E acesse o menu lateral Eventos
+	Quando o Voluntário clicar no menu no botão Criar Evento
+    E o Voluntário preencher os campos do formulário “Cadastrar evento” com dados inválidos
+    E clicar no botão “Salvar”
+    Então o sistema exibe mensagem de erro "Falha no cadastro!A data do evento não pode ser anterior ao dia de hoje"

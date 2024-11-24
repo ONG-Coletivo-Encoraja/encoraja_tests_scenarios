@@ -6,9 +6,8 @@ Library    String
 &{sidebar}
 #Elementos da tela
 # ______________________________ #
-# ...    MENU - EVENTOS - ADM    ... #   
+# ...    MENU - ADM    ... #   
 ...    Button_events=(//button[contains(@data-state,'closed')])[3]
-...    Button_create_events=//button[contains(.,'Criar')]
 
 *** Keywords ***
 E acesse o menu lateral Eventos
