@@ -12,7 +12,7 @@ Library    String
 ...    Button_inscriptions_adm=(//button[contains(@data-state,'closed')])[4]
 
 *** Keywords ***
-E acesse o menu lateral Eventos
+E acesse o menu lateral Eventos 2
     Sleep    3
     Wait Until Element Is Visible    ${sidebar.Button_events}
     Click Button    ${sidebar.Button_events}

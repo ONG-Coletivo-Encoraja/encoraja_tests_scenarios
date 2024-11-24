@@ -1,7 +1,7 @@
 *** Settings ***
 Library    BuiltIn
 Resource     ../../../Events/Resources/main.robot
-Suite Setup    Acessar o Site Web ONG Coletivo Encoraja
+Suite Setup    Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Voluntário
 Suite Teardown    Fechar navegador
 
 # Fucionalidade: "Editar Eventos"
@@ -26,20 +26,8 @@ Suite Teardown    Fechar navegador
 
 *** Test Cases ***
 
-# TC001 - Administrador editar demais campos do evento com dados válidos.
-#     Dado que eu esteja logado no sistema como Voluntário	
+# TC001 - Voluntário preenche lista de presença do evento
+#     Dado que eu esteja logado no sistema como Voluntário  
 #     E acesse o menu lateral Eventos
-#     Quando clicar no botão Editar Evento de um Evento (aprovado ou pendente)
-#     E alterar algum dos campos
-#     Mas não consegue alterar o campo de Status e Voluntário Responsável
-#     E clicar no botão Salvar
-#     Então o sistema deverá exibir as alterações do evento na tela de eventos para os usuários de acordo com o tipo de acesso
-
-# TC002 - Administrador editar demais campos do evento com dados inválidos.
-#     Dado que eu esteja logado no sistema como Voluntário	
-#     E acesse o menu lateral Eventos
-#     Quando clicar no botão Editar Evento de um Evento (aprovado ou pendente)
-#     E alterar algum dos campos utilizando dados inválidos
-#     Mas não consegue alterar o campo de Status e Voluntário Responsável
-#     E clicar no botão Salvar
-#     Então o sistema deverá mensagem de erro abaixo dos campos que foram preenchidos com dados incorretos
+#     Quando selecionar o evento para visualização 
+#     E clicar no botão "Ver inscritos"

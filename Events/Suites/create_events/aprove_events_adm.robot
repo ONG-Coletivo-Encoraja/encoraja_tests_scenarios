@@ -5,25 +5,6 @@ Resource    ../../Resources/Pages/Create_events.robot
 Suite Setup    Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
 Suite Teardown    Fechar navegador
 
-# Critério de aceitação 1:
-#     Como Administrador eu preciso Cadastrar os seguintes dados de eventos (pendentes e aprovados) no sistema:
-#
-#     Nome do Evento (tipo texto)
-#     Data do Evento (tipo data)
-#     Horário do Evento
-#     Descrição do Evento
-#     Tipo do Evento
-#     Status do Evento (Pendente, Ativo)
-#     Modalidade do Evento
-#     Total de vagas
-#     Vagas sociais
-#     Vagas gerais
-#     Público Alvo
-#     Materiais Necessários
-#     Áreas de interesse
-#     Preço
-#     Carga Horária
-#     Voluntário responsável 
 
 *** Test Cases ***
 

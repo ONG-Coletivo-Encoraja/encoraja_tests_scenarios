@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../main.robot
+Resource    ../../../Events/Resources/Pages/Create_events.robot
 Library    String
 
 *** Variables ***
@@ -16,6 +17,9 @@ Library    String
 ...    Button_alter_status=(//button[contains(.,'Alterar Status')])[2]
 ...    Pop_up_alter_status=//div[@role='alertdialog'][contains(.,'Cancelar inscrição?Selecione o novo status do evento: Evento Teste Robot Pendente Voluntário?PendenteCancelarSim')]
 ...    Button_status_inscription=(//button[@type='button'][contains(.,'Pendente')])[2]
+...    Button_show_inscriptions=(//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2')])[2]
+...    Button_checkbox=//input[contains(@type,'checkbox')]
+...    Button_save_list=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2'][contains(.,'Salvar')]
 
 *** Keywords ***
 
@@ -34,6 +38,22 @@ E filtre apenas as inscrições Pendentes
     Set Focus To Element    ${inscription.Filter_inscriptions_adm}
     Sleep    1
     Press Keys    ${inscription.Filter_inscriptions_adm}    ARROW_DOWN    ARROW_DOWN    ENTER
+
+E clicar no botão "Ver inscritos"
+    Sleep    3
+    Wait Until Element Is Visible    ${inscription.Button_show_inscriptions}
+    Click Button    ${inscription.Button_show_inscriptions}
+
+E selecionar a checkbox de presença
+    Sleep    1
+    Wait Until Element Is Visible    ${inscription.Button_checkbox}
+    Click Element    ${inscription.Button_checkbox}
+
+Quando selecionar o evento para visualização de inscrições
+    Sleep    3
+    E o novo evento será exibido na listagem de Todos os eventos
+    Quando selecionar o evento Finalizado para visualização
+
 
 Quando clicar no botão "Me Inscrever"
     Sleep    3
@@ -61,5 +81,10 @@ Então o sistema exibe uma caixa de PopUp para alteração de Status ou cancelam
     Sleep    1
     Press Keys    ${inscription.Button_status_inscription}    ARROW_UP    ENTER
     Capture Page Screenshot
+
+Então clicar em Salvar
+    Sleep    1
+    Set Focus To Element    ${inscription.Button_save_list}
+    Click Button    ${inscription.Button_save_list}
 
     

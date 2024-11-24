@@ -1,7 +1,7 @@
 *** Settings ***
 Library    BuiltIn
 Resource     ../../../Events/Resources/main.robot
-Test Setup       Acessar o Site Web ONG Coletivo Encoraja
+Test Setup       Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
 Test Teardown    Fechar navegador
 
 # Fucionalidade: "Editar Eventos"
@@ -29,6 +29,12 @@ Test Teardown    Fechar navegador
 TC001 - Administrador edita Status do Evento de Ativo para Finalizado
     Dado que eu esteja logado no sistema como Administrador
     E acesse o menu lateral Eventos
+    Quando selecionar o evento para visualização
+    E clicar no botão "Editar evento"
+    E alterar o Status de Ativo para Finalizado
+    E clicar no botão “Salvar”
+    Então o usuário redirecionado para a tela de Todos os Eventos
+    E o evento será apresentado com o Status "Finalizado"
     
 
 # TC001 - Administrador edita Status do Evento de Pendente para Aprovado.

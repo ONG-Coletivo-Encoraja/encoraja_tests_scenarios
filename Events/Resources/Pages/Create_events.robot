@@ -36,9 +36,11 @@ ${DATE_FORMAT}    %d%m%Y
 ...    Invalid_pop_up_message=(//li[@role='status'][contains(.,'Falha no cadastro!A data do evento não pode ser anterior ao dia de hoje.')])[2]
 ...    Img_home_volunter=//img[@src='/img/girlshome.png']
 ...    Event_details=(//div[@class='border bg-card text-card-foreground shadow w-full rounded-xl min-h-[350px] max-h-[500px]'][contains(.,'Próximos eventosEvento Teste Robot Pendente Voluntário14:00:00RemotoPalestraPendente24/11/2024Responsável: Maria OliveiraDescrição Evento Teste Robot Voluntário')])[1]
+...    Event_details_finish=//div[@class='border bg-card text-card-foreground shadow w-full rounded-xl min-h-[350px] max-h-[500px]'][contains(.,'Próximos eventosEvento Teste Robot Pendente Voluntário14:00:00RemotoPalestraFinalizado24/11/2024Responsável: Maria OliveiraDescrição Evento Teste Robot Voluntário')]
 ...    Button_edit_event=//button[contains(.,'Editar evento')]
 ...    Status_event_active=//li[contains(.,'Ativo')]
 ...    Status_event_pending=//button[@type='button'][contains(.,'Pendente')]
+...    Status_event_finish=(//div[contains(.,'Finalizado')])[11]
 
 *** Keywords ***
 
@@ -65,6 +67,11 @@ Quando selecionar o evento para visualização
     Click Element    ${event.Event_details}
     Wait Until Element Is Visible    ${event.Button_edit_event}    10
 
+Quando selecionar o evento Finalizado para visualização
+    Sleep    3
+    E o novo evento será exibido na listagem de Todos os eventos
+    Click Element    ${event.Event_details_finish}
+
 E clicar no botão "Editar evento"
     Sleep    3
     Set Focus To Element    ${event.Button_edit_event}
@@ -79,9 +86,22 @@ E alterar o Status de Pendente para Ativo
     Sleep    1
     Press Keys    ${event.Status_event_pending}    ARROW_UP    ARROW_UP    ENTER 
 
+E alterar o Status de Ativo para Finalizado
+    Sleep    3
+    Scroll Element Into View    ${event.Status_event_pending}
+    Wait Until Element Is Visible    ${event.Status_event_pending}
+    Set Focus To Element    ${event.Status_event_pending}  
+    Sleep    1
+    Press Keys    ${event.Status_event_pending}    ARROW_DOWN    ARROW_DOWN    ARROW_DOWN    ENTER 
+
 E o evento será apresentado com o Status "Ativo"
     E o novo evento será exibido na listagem de Todos os eventos
     Set Focus To Element    ${event.Status_event_active}
+    Capture Page Screenshot
+
+E o evento será apresentado com o Status "Finalizado"
+    E o novo evento será exibido na listagem de Todos os eventos
+    Set Focus To Element    ${event.Status_event_finish}
     Capture Page Screenshot
 
 E o Voluntário preencher os campos do formulário “Cadastrar evento” com o status de pendente
