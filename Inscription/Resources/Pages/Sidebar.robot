@@ -10,7 +10,6 @@ Library    String
 ...    Button_events=(//button[contains(@data-state,'closed')])[3]
 ...    Button_events_beneficiary=(//button[contains(@data-state,'closed')])[4]
 ...    Button_inscriptions_adm=(//button[contains(@data-state,'closed')])[4]
-
 *** Keywords ***
 E acesse o menu lateral Eventos 2
     Sleep    3
@@ -18,14 +17,14 @@ E acesse o menu lateral Eventos 2
     Click Button    ${sidebar.Button_events}
     Sleep    3
 
-E que o Beneficiário acesse o menu lateral Eventos
+E que o Beneficiário acesse o menu lateral Eventos 2
     Sleep    3
     Wait Until Element Is Visible    ${sidebar.Button_events_beneficiary}
     Click Button    ${sidebar.Button_events_beneficiary}
     Sleep    3
 
 E que o Administrador acesse o menu lateral Inscrições
-    Sleep    3
+    Sleep    5
     Wait Until Element Is Visible    ${sidebar.Button_inscriptions_adm}
     Click Button    ${sidebar.Button_inscriptions_adm}
     Sleep    3

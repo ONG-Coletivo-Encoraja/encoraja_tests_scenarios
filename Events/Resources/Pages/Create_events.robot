@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../main.robot
+Resource    ../../../Inscription/Resources/Pages/Sidebar.robot
 Library    String
 
 
@@ -37,8 +38,10 @@ ${DATE_FORMAT}    %d%m%Y
 ...    Img_home_volunter=//img[@src='/img/girlshome.png']
 ...    Event_details=(//div[@class='border bg-card text-card-foreground shadow w-full rounded-xl min-h-[350px] max-h-[500px]'][contains(.,'Próximos eventosEvento Teste Robot Pendente Voluntário14:00:00RemotoPalestraPendente24/11/2024Responsável: Maria OliveiraDescrição Evento Teste Robot Voluntário')])[1]
 ...    Event_details_finish=//div[@class='border bg-card text-card-foreground shadow w-full rounded-xl min-h-[350px] max-h-[500px]'][contains(.,'Próximos eventosEvento Teste Robot Pendente Voluntário14:00:00RemotoPalestraFinalizado24/11/2024Responsável: Maria OliveiraDescrição Evento Teste Robot Voluntário')]
+...    Event_details_active=//div[@class='border bg-card text-card-foreground shadow w-full rounded-xl min-h-[350px] max-h-[500px]'][contains(.,'Próximos eventosEvento Teste Robot Pendente Voluntário14:00:00RemotoPalestraAtivo24/11/2024Responsável: Maria OliveiraDescrição Evento Teste Robot Voluntário')]
 ...    Button_edit_event=//button[contains(.,'Editar evento')]
-...    Status_event_active=//li[contains(.,'Ativo')]
+...    Status_event_active_card=(//div[contains(.,'Ativo')])[11]
+...    Status_event_active=//button[@type='button'][contains(.,'Ativo')]
 ...    Status_event_pending=//button[@type='button'][contains(.,'Pendente')]
 ...    Status_event_finish=(//div[contains(.,'Finalizado')])[11]
 ...    Button_review=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2'][contains(.,'Deixe aqui a sua avaliação!')]
@@ -72,6 +75,14 @@ Quando selecionar o evento para visualização
     Sleep    3
     E o novo evento será exibido na listagem de Todos os eventos
     Click Element    ${event.Event_details}
+    Sleep    10
+    Wait Until Element Is Visible    ${event.Button_edit_event}    10
+
+Quando selecionar o evento Ativo para visualização
+    Sleep    3
+    E o novo evento será exibido na listagem de Todos os eventos
+    Click Element    ${event.Event_details_active}
+    Sleep    10
     Wait Until Element Is Visible    ${event.Button_edit_event}    10
 
 Quando selecionar o evento Finalizado para visualização
@@ -95,15 +106,15 @@ E alterar o Status de Pendente para Ativo
 
 E alterar o Status de Ativo para Finalizado
     Sleep    3
-    Scroll Element Into View    ${event.Status_event_pending}
-    Wait Until Element Is Visible    ${event.Status_event_pending}
-    Set Focus To Element    ${event.Status_event_pending}  
+    Scroll Element Into View    ${event.Status_event_active}
+    Wait Until Element Is Visible    ${event.Status_event_active}
+    Set Focus To Element    ${event.Status_event_active}  
     Sleep    1
-    Press Keys    ${event.Status_event_pending}    ARROW_DOWN    ARROW_DOWN    ARROW_DOWN    ENTER 
+    Press Keys    ${event.Status_event_active}    ARROW_DOWN    ARROW_DOWN    ARROW_DOWN    ENTER 
 
 E o evento será apresentado com o Status "Ativo"
     E o novo evento será exibido na listagem de Todos os eventos
-    Set Focus To Element    ${event.Status_event_active}
+    Set Focus To Element    ${event.Status_event_active_card}
     Capture Page Screenshot
 
 E o evento será apresentado com o Status "Finalizado"
@@ -582,7 +593,7 @@ E o novo evento será exibido na listagem de Todos os eventos
     Capture Page Screenshot
 
 E na tela de Eventos o novo evento será exibido na listagem de Todos os eventos
-    E acesse o menu lateral Eventos
+    E acesse o menu lateral Eventos 2
     E o novo evento será exibido na listagem de Todos os eventos
 
 Então o sistema exibe mensagem de erro "Falha no cadastro!A data do evento não pode ser anterior ao dia de hoje"

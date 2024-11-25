@@ -13,7 +13,7 @@ Suite Teardown    Fechar navegador
 
 TC001 - Beneficiário me inscrevo em um evento ativo.
     Dado que eu esteja logado no sistema como Benefiário
-    E que o Beneficiário acesse o menu lateral Eventos
+    E que o Beneficiário acesse o menu lateral Eventos 2
     E selecionar o novo evento criado
     Quando clicar no botão "Me Inscrever" 
     Então o sistema exibe uma mensagem de confirmação que após confirmada inscrição é efetuada com sucesso

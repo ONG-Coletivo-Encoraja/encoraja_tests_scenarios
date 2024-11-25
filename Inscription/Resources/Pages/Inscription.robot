@@ -46,7 +46,7 @@ E clicar no botão "Ver inscritos"
 
 E selecionar a checkbox de presença
     Sleep    1
-    Wait Until Element Is Visible    ${inscription.Button_checkbox}
+    Set Focus To Element    ${inscription.Button_checkbox}
     Click Element    ${inscription.Button_checkbox}
 
 Quando selecionar o evento para visualização de inscrições
@@ -80,6 +80,7 @@ Então o sistema exibe uma caixa de PopUp para alteração de Status ou cancelam
     Set Focus To Element    ${inscription.Button_status_inscription}
     Sleep    1
     Press Keys    ${inscription.Button_status_inscription}    ARROW_UP    ENTER
+    Sleep    3
     Capture Page Screenshot
 
 Então clicar em Salvar
