@@ -45,10 +45,12 @@ A Organização não Governamental (ONG) **Coletivo Encoraja** apoia mulheres em
         <tr>
             <td style="text-align:center;">
                 <img src="https://media.licdn.com/dms/image/v2/D4D03AQGjkE_TgqbwKQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718147518615?e=1733961600&v=beta&t=ZciuQR7qrvzZNgNxK8kO353gb2u68rZjf6BYT60bW2Y" alt="Andre">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGjkE_TgqbwKQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718147518615?e=1733961600&v=beta&t=ZciuQR7qrvzZNgNxK8kO353gb2u68rZjf6BYT60bW2Y" alt="Andre">
                 <br>
                 Andre
             </td>
             <td style="text-align:center;">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQHr7w0DU_lM6A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1710427543029?e=1733961600&v=beta&t=TScPZk5npsOXdvX34o09o7RfvC3Y3Ri56BjqvE_eDyM" alt="Juliana">
                 <img src="https://media.licdn.com/dms/image/v2/D4D03AQHr7w0DU_lM6A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1710427543029?e=1733961600&v=beta&t=TScPZk5npsOXdvX34o09o7RfvC3Y3Ri56BjqvE_eDyM" alt="Juliana">
                 <br>
                 Juliana
