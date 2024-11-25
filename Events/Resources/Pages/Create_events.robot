@@ -41,6 +41,13 @@ ${DATE_FORMAT}    %d%m%Y
 ...    Status_event_active=//li[contains(.,'Ativo')]
 ...    Status_event_pending=//button[@type='button'][contains(.,'Pendente')]
 ...    Status_event_finish=(//div[contains(.,'Finalizado')])[11]
+...    Button_review=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2'][contains(.,'Deixe aqui a sua avaliação!')]
+...    Pop_up_review=//div[@role='dialog'][contains(.,'Deixe sua AvaliaçãoSua opinião é muito importante para nós. Preencha os campos abaixo:De forma geral, como avalia as atividades ofertadas?1 Star2 Stars3 Stars4 Stars5 StarsEmptyVocê se sentiu acolhida em nosso espaço?SimNãoVocê recomendaria nosso espaço?SimNãoGostaria de deixar um depoimento?SalvarClose')]
+...    Button_review_stars=(//label[contains(@class,'css-dqr9h-MuiRating-label')])[5]
+...    Button_review_3=(//button[contains(@type,'button')])[3]
+...    Button_review_5=(//button[contains(@type,'button')])[5]
+...    Input_review_text=//textarea[contains(@class,'flex min-h-[60px] bg-transparent text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 border border-[#F69053] p-4 rounded-md h-20 w-[400px]')]
+...    Button_review_save=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#702054] text-primary-foreground hover:bg-[#b03e88] h-10 px-4 py-2'][contains(.,'Salvar')]
 
 *** Keywords ***
 
@@ -104,6 +111,23 @@ E o evento será apresentado com o Status "Finalizado"
     Set Focus To Element    ${event.Status_event_finish}
     Capture Page Screenshot
 
+E clicar no botão "Deixe aqui a sua avaliação!"
+    Sleep    10
+    Wait Until Element Is Visible    ${event.Button_review}
+    Click Button    ${event.Button_review}
+    Wait Until Element Is Visible    ${event.Pop_up_review}
+
+E avaliar o evento
+    Sleep    3
+    Set Focus To Element    ${event.Button_review_stars}
+    Click Element    ${event.Button_review_stars}
+    Sleep    1
+    Set Focus To Element    ${event.Button_review_3}
+    Click Element    ${event.Button_review_5}
+    Sleep    1
+    Set Focus To Element    ${event.Input_review_text}
+    Input Text    ${event.Input_review_text}    Avaliação teste Robot
+    
 E o Voluntário preencher os campos do formulário “Cadastrar evento” com o status de pendente
     Sleep    3
     Wait Until Element Is Visible    ${event.Input_event_name}
@@ -573,5 +597,10 @@ Então o usuário é redirecionado para a tela de Inicial os Eventos
 Então o usuário redirecionado para a tela de Todos os Eventos
     Sleep    5
     Wait Until Element Is Visible    ${event.Title_page_all_events}    10
+
+Então Salvar a Avaliação
+    Capture Page Screenshot
+    Set Focus To Element    ${event.Button_review_save}
+    Click Button    ${event.Button_review_save}
 
 
