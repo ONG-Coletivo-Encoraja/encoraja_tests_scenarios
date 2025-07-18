@@ -1,13 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource    ../../../Events/Resources/main.robot
+Resource    ../../../resources/main.resource
 Suite Setup       Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
 Suite Teardown    Fechar navegador
-
-# Funcionalidade: "Visualizar Eventos"
-# Critério de aceitação 1:
-#     Como Administrador eu preciso Vizualiza Todos os eventos
-#      cadastrados no sistema (pendentes, aprovados e reprovados).
 
 *** Test Cases ***
 

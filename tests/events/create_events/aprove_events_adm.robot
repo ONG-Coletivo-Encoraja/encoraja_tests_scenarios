@@ -1,7 +1,6 @@
 *** Settings ***
 Library    BuiltIn
-Resource     ../../../Events/Resources/main.robot
-Resource    ../../Resources/Pages/Create_events.robot
+Resource     ../../../resources/main.resource
 Suite Setup    Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
 Suite Teardown    Fechar navegador
 

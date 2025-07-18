@@ -1,9 +1,6 @@
 *** Settings ***
 Library    BuiltIn
-Resource     ../../Main_event_flow/Resources/main.robot
-Resource    ../../Events/Resources/Shares/stup_teardown.robot
-Resource    ../../Inscription/Resources/Pages/Inscription.robot 
-Resource    ../../Inscription/Resources/Pages/Sidebar.robot
+Resource     ../../resources/main.resource
 Test Setup    Acessar o Site Web ONG Coletivo Encoraja
 Test Teardown    Fechar navegador
 

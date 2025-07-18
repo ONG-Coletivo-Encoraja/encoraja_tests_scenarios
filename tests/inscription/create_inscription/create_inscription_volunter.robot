@@ -1,12 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../Inscription\Resources\main.robot
+Resource    ../../../resources/main.resource
 Test Setup       Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Voluntário
 Test Teardown    Fechar navegador
-
-# Funcionalidade: "Inscrição em Evento"
-# Critério de aceitação 1:
-#     Como Voluntário eu quero conseguir me Inscrever em eventos (aprovados/ativos) no sistema.
 
 *** Test Cases ***
 

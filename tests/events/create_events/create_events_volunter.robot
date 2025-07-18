@@ -1,29 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../Events/Resources/main.robot
+Resource     ../../../resources/main.resource
 Suite Setup    Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Voluntário
 Suite Teardown    Fechar navegador
-
-# Funcionalidade: "Cadastrar Eventos"
-# Critério de aceitação 1:
-#     Como Voluntário eu preciso Cadastrar os seguintes dados de eventos (pendentes) no sistema:
-
-#     Nome do Evento (tipo texto)
-#     Data do Evento (tipo data)
-#     Horário do Evento
-#     Descrição do Evento
-#     Tipo do Evento
-#     Status do Evento (Pendente, Ativo)
-#     Modalidade do Evento
-#     Total de vagas
-#     Vagas sociais
-#     Vagas gerais
-#     Público Alvo
-#     Materiais Necessários
-#     Áreas de interesse
-#     Preço
-#     Carga Horária
-#     Voluntário responsável 
 
 *** Test Cases ***
 

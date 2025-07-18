@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../main.robot
+Resource    ../../main.resource
 Library    String
 
 *** Keywords ***

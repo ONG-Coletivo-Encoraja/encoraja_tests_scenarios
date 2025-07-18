@@ -1,12 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../Events/Resources/main.robot
+Resource    ../../../resources/main.resource
 Suite Setup       Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Voluntário
 Suite Teardown    Fechar navegador
-
-# Funcionalidade: "Visualizar Eventos"
-# Critério de aceitação 1:
-#     Como Voluntário eu preciso Vizualizar Todos os eventos que eu cadastrados no sistema (pendentes, aprovados e reprovados).
 
 *** Test Cases ***
 

@@ -1,12 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../../Eventos\Resources\main.robot
+Resource    ../../../resources/main.resource
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
-
-Funcionalidade: "Deletar inscrição em Meus eventos"
-Critério de aceitação 1:
-    Como Beneficiário eu quero conseguir canacelar minhas Inscrições em eventos (aprovados/ativos) na tela de Minhas Inscrições.
 
 *** Test Cases ***
 

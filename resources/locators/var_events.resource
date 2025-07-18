@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../main.resource
+Resource    ../main.resource
 
 *** Variables ***
 ${DATE_FORMAT}    %d%m%Y

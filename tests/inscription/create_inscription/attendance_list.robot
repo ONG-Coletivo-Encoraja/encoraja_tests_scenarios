@@ -1,7 +1,6 @@
 *** Settings ***
 Library    BuiltIn
-Resource     ../../../Inscription/Resources/main.robot
-Resource    ../../Resources/Pages/Inscription.robot
+Resource    ../../../resources/main.resource
 Suite Setup    Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Voluntário
 Suite Teardown    Fechar navegador
 

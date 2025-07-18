@@ -1,13 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../Inscription/Resources/main.robot
-Resource    ../../Resources/Pages/Inscription.robot
+Resource    ../../../resources/main.resource
 Suite Setup     Acessar o Site Web ONG Coletivo Encoraja e logar com o usuário Administrador
 Suite Teardown    Fechar navegador
-
-# Funcionalidade: "Inscrição em Evento"
-# Critério de aceitação 1:
-    # Como Administrador eu quero conseguir aprovar Inscrições em eventos no sistema.
 
 *** Test Cases ***
 

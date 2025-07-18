@@ -1,12 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../../Eventos\Resources\main.robot
+Resource    ../../../resources/main.resource
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
-
-Funcionalidade: "Visualizar Eventos"
-Critério de aceitação 1:
-    Como Beneficiário eu preciso Vizualizar Todos os eventos em que eu estou inscrito (aprovados).
 
 *** Test Cases ***
 

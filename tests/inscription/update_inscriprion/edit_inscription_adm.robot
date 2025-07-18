@@ -1,12 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../../Eventos/Resources/main.robot
+Resource    ../../../resources/main.resource
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
-
-Fucionalidade: "Editar Eventos"
-    Critério de aceitação 1:
-        Como Administrador eu preciso conseguir Editar o status de inscrições pagas (aprovados, pendentes e reprovados) na tela de Todas as Inscrições.
 
 *** Test Cases ***
 

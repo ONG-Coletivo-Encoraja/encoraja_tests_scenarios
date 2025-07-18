@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../../main.robot
+Resource    ../../main.resource
 
 *** Keywords ***
 Acessar o Site Web ONG Coletivo Encoraja

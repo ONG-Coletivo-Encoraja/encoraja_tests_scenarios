@@ -1,12 +1,7 @@
 *** Settings ***
-Library    BuiltIn
-Resource     ../../../../Eventos\Resources\main.robot
+Resource    ../../../resources/main.resource
 Test Setup       Acessar o site do Coletivo encoraja e logar
 Test Teardown    Fechar navegador
-
-Funcionalidade: "Visualizar Inscrições"
-Critério de aceitação 1:
-    Como Administrador eu preciso Vizualiza Todas as Inscrições cadastrados no sistema (pendentes, aprovados e reprovados).
 
 *** Test Cases ***
 

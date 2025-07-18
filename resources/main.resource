@@ -20,3 +20,7 @@ Resource    keywords/pages/kw_login.resource
 
 #=================================== locators ===================================#
 Resource    locators/var_login.resource
+Resource    locators/var_home.resource
+Resource    locators/var_events.resource
+Resource    locators/var_inscription.resource
+Resource    locators/var_sidebar.resource
